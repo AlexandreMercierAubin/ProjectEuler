@@ -26,3 +26,18 @@ static long quickSumMultiplesOfXYBelowN(long x, long y, long n) {
 	d = d / z;
 	return x * a*(a + 1) / 2 + y * b*(b + 1) / 2 - z * d*(d + 1) / 2;
 }
+
+static long long unsigned int fibonacciEvenValuedN(long long unsigned int n) {
+	long long unsigned int p1 = 0;
+	long long unsigned int p2 = 2;
+
+	long long unsigned int sum = 0;
+
+	while (p2 <= n) {
+		long long unsigned int p3 = 4 * p2 + p1;
+		sum += p2;
+		p1 = p2;
+		p2 = p3;
+	}
+	return sum;
+}
