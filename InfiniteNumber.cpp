@@ -4,7 +4,7 @@ using namespace std;
 public class InfiniteNumber
 {
     vector<short int> number;
-    public InfiniteNumber(string strNum)
+    public InfiniteNumber(const string &strNum)
     {
         number = vector(strNum.size());
         for(int i = 0; i< number.size(); ++i)
@@ -20,7 +20,7 @@ public class InfiniteNumber
         return number;
     } 
 
-    public vector<short int> addNumbers(vector<short int> &longer, vector<short int> &shorter){
+    public vector<short int> addNumbers(const vector<short int> &longer, const vector<short int> &shorter){
         vector<short int> result;
 
         short int rest = 0;
@@ -46,11 +46,11 @@ public class InfiniteNumber
         return result;
     }
 
-    public InfiniteNumber & operator+(InfiniteNumber addedNum)
+    public InfiniteNumber & operator+(const InfiniteNumber &addedNum)
     {
         vector<short int> result;
         vector<short int> addedVec = addedNum.toVector();
-        
+
         if(number.size()>addedVec.size()){
             result = addNumbers(number, addedVec);
         }
