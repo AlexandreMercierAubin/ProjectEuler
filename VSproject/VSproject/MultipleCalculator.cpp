@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <vector>
+#include <math.h>
 using namespace std;
 
 static long sumMultipleOfKBelowN(long k, long n) {
@@ -40,4 +41,15 @@ static long long unsigned int fibonacciEvenValuedN(long long unsigned int n) {
 		p2 = p3;
 	}
 	return sum;
+}
+
+static long sumSquareDifference(long n) {
+	long sumS = 0;
+	long sSum = 0;
+	for (int i = 1; i <= n; ++i) {
+		sumS += pow(i, 2);
+		sSum += i;
+	}
+	sSum = pow(sSum, 2);
+	return abs(sumS - sSum);
 }
