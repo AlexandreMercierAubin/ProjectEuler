@@ -24,8 +24,14 @@ public class InfiniteNumber
         vector<short int> result;
 
         short int rest = 0;
-        for(int i = 0; i < shorter.size(); ++i){
-            short int value = rest + shorter[i] + longer[i];
+        for(int i = 0; i < longer.size(); ++i){
+            short int value;
+
+            if(i<shorter.size()){
+                value = rest + shorter[i] + longer[i];
+            }else{
+                value = rest + longer[i];
+            }
 
             if(value >= 10){
                 value = value - 10;
@@ -44,12 +50,14 @@ public class InfiniteNumber
     {
         vector<short int> result;
         vector<short int> addedVec = addedNum.toVector();
+        
         if(number.size()>addedVec.size()){
             result = addNumbers(number, addedVec);
         }
         else{
             result = addNumbers(addedVec, number);
         }
+
         return result;
     }    
 }
